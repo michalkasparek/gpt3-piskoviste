@@ -1,0 +1,5 @@
+constants.py
+__pycache__
+.ipynb_checkpoints
+000 testy testů.*
+002 gpt-3.5-turbo.*
