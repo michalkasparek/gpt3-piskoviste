@@ -9,7 +9,7 @@ def ucet(znaku):
     ucet = round(ucet, 2)
     return ucet
 
-def promptor(instrukce1, zanr, uryvek, instrukce2, stop, temperature, frequency_penalty, presence_penalty, max_tokens, engine, print=False):
+def promptor(instrukce1, zanr, uryvek, instrukce2, stop, temperature, frequency_penalty, presence_penalty, max_tokens, engine, p_o=False):
     
     prompt = instrukce1 + "\n\n" + zanr + "=\"\"\"" + uryvek + "\"\"\"" + "\n\n" + instrukce2
     
@@ -26,8 +26,8 @@ def promptor(instrukce1, zanr, uryvek, instrukce2, stop, temperature, frequency_
 
     completion = completions.choices[0].text
 
-    if print:
-        print(completion)
+    if p_o:
+        print(completions)
 
     return [uryvek, instrukce1, instrukce2, completion, stop, engine, temperature, frequency_penalty, presence_penalty, max_tokens, zanr, pd.to_datetime("today").strftime("%Y-%m-%d")]
 
